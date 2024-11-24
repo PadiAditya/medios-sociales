@@ -16,7 +16,7 @@ def get_comments():
 def create_comment():
     user_id = get_jwt_identity()
     data = request.json
-    new_comment = Comment(content=data["content"], user_id=user_id)
+    new_comment = Comment(content=data["content"], user_id=user_id, post_id=data.post_id)
     db.session.add(new_comment)
     db.session.commit()
     return jsonify({"message": "Comment created successfully"}), 201
