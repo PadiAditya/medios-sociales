@@ -18,12 +18,10 @@ jwt = JWTManager(app)
 
 from routes.auth import auth_blueprint
 from routes.post import post_blueprint
-from routes.comment import comment_blueprint
 from routes.user import user_blueprint
 
 app.register_blueprint(auth_blueprint, url_prefix="/auth")
 app.register_blueprint(post_blueprint, url_prefix="/posts")
-app.register_blueprint(comment_blueprint, url_prefix="/comments")
 app.register_blueprint(user_blueprint, url_prefix="/users")
 
 
